@@ -14,10 +14,19 @@ export class Chapeu extends Produto {
 
     public set tamanho(value: string) {
         this._tamanho = value;
+
+        if (value === "P" || value === "M" || value === "G") {
+            this._tamanho = value;
+        } else {
+            console.error("Tamanho inválido. O tamanho deve ser P, M ou G.");
+        }
     }
 
     public visualizar(): void {
         super.visualizar();
         console.log(`Tamanho: ${this._tamanho}`);
+
+        
     }
+
 }
